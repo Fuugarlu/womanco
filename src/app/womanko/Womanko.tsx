@@ -20,7 +20,7 @@ const Womanko = () => {
   useEffect(() => {
     const fetchFileContent = async () => {
       try {
-        const response = await fetch("/curated-combination-of-words.txt");
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/curated-combination-of-words.txt`);
         if (response.ok) {
           const text = await response.text();
 
@@ -116,7 +116,7 @@ const Womanko = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-700">
-      <div className="w-full max-w-3xl p-6 bg-white rounded shadow-lg bg-blue-100">
+      <div className="w-full max-w-3xl p-6 rounded shadow-lg bg-blue-100">
         <div className="relative">
           <div className="text-center mb-4">
           <h1 className="text-2xl font-bold text-gray-700">Woman <span className="text-red-600">Coom</span>munication</h1>
@@ -157,7 +157,7 @@ const Womanko = () => {
           </div>
         )}
 
-        {fileContent && submittedText && searchResult && !searchResult.found && <div className="mt-6 text-lg text-center text-blue-500 italic">Looks seiso to me!</div>}
+        {fileContent && submittedText && searchResult && !searchResult.found && <div className="mt-6 text-lg text-center text-blue-500 italic font-semibold">Looks seiso to me!</div>}
       </div>
     </div>
   );
