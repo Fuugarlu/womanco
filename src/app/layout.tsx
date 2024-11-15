@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Woman Coommunication",
-  description: "Find hidden meanings!",
+  description: "Find hidden lewd words!",
 };
 
 export default function RootLayout({
